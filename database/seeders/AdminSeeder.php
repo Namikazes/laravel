@@ -16,7 +16,7 @@ class AdminSeeder extends Seeder
     public function run(): void
     {
         if (! User::where('email', self::ADMIN_EMAIL)->exists()) {
-            (User::factory()->withEmail(self::ADMIN_EMAIL)->create())->syncRoles(Roles::ADMIN);
+            (User::factory()->withEmail(self::ADMIN_EMAIL)->create())->syncRoles(Roles::ADMIN->value);
         }
     }
 }
