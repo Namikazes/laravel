@@ -1,5 +1,7 @@
 @import url('https://fonts.bunny.net/css?family=Nunito');
 
+@import "@fortawesome/fontawesome-free/css/all.min.css";
+
 // Variables
 @import '../variables';
 
@@ -64,4 +66,13 @@ main {
 
 .scrollarea {
     overflow-y: auto;
+}
+
+.table th a {
+    color: black;
+    text-decoration: none;
+}
+
+.table th a:hover {
+    text-decoration: underline;
 }
