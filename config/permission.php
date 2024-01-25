@@ -185,11 +185,11 @@ return [
     ],
 
     'permissions' => [
-      'categories' => [
-          'publisher' => 'publish categoris',
-          'edit' => 'edit categoris',
-          'delete' => 'delete categoris',
-      ],
+        'categories' => [
+            'publisher' => 'publish categoris',
+            'edit' => 'edit categoris',
+            'delete' => 'delete categoris',
+        ],
         'products' => [
             'publisher' => 'publish products',
             'edit' => 'edit products',

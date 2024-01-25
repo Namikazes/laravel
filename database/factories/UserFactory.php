@@ -31,7 +31,7 @@ class UserFactory extends Factory
             'email' => fake()->unique()->safeEmail(),
             'email_verified_at' => now(),
             'phone' => fake()->unique()->e164PhoneNumber(),
-            'birthdate' => fake()->dateTimeBetween('-70 years', '-18 years' )->format('Y-m-d'),
+            'birthdate' => fake()->dateTimeBetween('-70 years', '-18 years')->format('Y-m-d'),
             'password' => static::$password ??= Hash::make('test1111'),
             'remember_token' => Str::random(10),
         ];
@@ -49,13 +49,13 @@ class UserFactory extends Factory
 
     public function configure()
     {
-        return $this->afterCreating(function (User $user){
+        return $this->afterCreating(function (User $user) {
             $user->assignRole(Roles::CUSTOMER->value);
         });
     }
 
     public function withEmail(string $email)
     {
-        return $this->state(fn(array $attrs) => ['email' => $email]);
+        return $this->state(fn (array $attrs) => ['email' => $email]);
     }
 }
