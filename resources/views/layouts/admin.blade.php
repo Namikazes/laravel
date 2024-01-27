@@ -12,6 +12,8 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
+    <!-- Lara Izitoast -->
+    <link href="{{ asset('css/iziToast.css') }}" rel="stylesheet">
 
     <!-- Scripts -->
     @vite(['resources/scss/admin/admin.scss', 'resources/js/app.js'])
@@ -60,7 +62,7 @@
         </nav>
 
         <main class="d-flex flex-nowrap">
-            <div class="flex-shrink-1 p-3" style="width: 380px;">
+            <div class="flex-shrink-1 p-3" style="width: 200px;">
                 <ul class="list-unstyled ps-0">
                     <li class="mb-1">
                         <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
@@ -83,8 +85,9 @@
                     </div>
                 </div>
             </div>
-
         </main>
     </div>
+    <script src="{{ asset('js/iziToast.js') }}"></script>
+    @include('vendor.lara-izitoast.toast')
 </body>
 </html>
