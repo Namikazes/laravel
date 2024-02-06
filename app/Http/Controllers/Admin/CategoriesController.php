@@ -65,7 +65,7 @@ class CategoriesController extends Controller
 
         notify()->success("Edit category '$data[name]'");
 
-        return redirect()->route('admin.categories.index', $category);
+        return redirect()->route('admin.categories.edit', $category);
     }
 
     /**

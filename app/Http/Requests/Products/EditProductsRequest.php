@@ -38,7 +38,7 @@ class EditProductsRequest extends FormRequest
             'price' => ['required', 'numeric', 'min:1'],
             'new_price' => ['nullable', 'numeric', 'min:1'],
             'quantity' => ['required', 'numeric', 'min:0'],
-            'thumbnail' => ['sometimes', 'image:jpeg,png'],
+            'thumbnail' => ['nullable', 'image:jpeg,png'],
             'categories.*' => ['required', 'numeric', Rule::exists('categories', 'id')],
             'images.*' => ['sometimes', 'image:jpeg,png'],
         ];
