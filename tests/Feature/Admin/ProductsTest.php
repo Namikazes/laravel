@@ -32,25 +32,26 @@ class ProductsTest extends TestCase
     {
         $file = UploadedFile::fake()->image('img_test.png');
 
-        $data = array_merge(
-          Product::factory()->make()->toArray(),
-          ['thumbnail' => $file]
-        );
+        $productData = Product::factory()->make();
+
+        $data = $productData->toArray();
+        $data['thumbnail'] = $file;
 
         $response = $this->actingAs($this->getUser(Roles::ADMIN))
-            ->post(route('admin.products.store'),$data);
+            ->post(route('admin.products.store'), $data);
 
-        $this->assertDatabaseHas(Product::class, data: [
-            'title' => $data['title'],
-            'slug' => $data['slug'],
-            'SKU' => $data['SKU'],
-            'price' => $data['price'],
-            'description' => $data['description'],
-            'new_price' => $data['new_price'],
-            'quantity' => $data['quantity']
+        $this->assertDatabaseHas(Product::class, [
+            'title' => $productData->title,
+            'slug' => $productData->slug,
+            'SKU' => $productData->SKU,
+            'price' => $productData->price,
+            'description' => $productData->description,
+            'new_price' => $productData->new_price,
+            'quantity' => $productData->quantity
         ]);
 
-        $product = Product::where('title', $data['title'])->first();
+        $product = Product::where('title', $productData->title)->first();
+
         $this->assertTrue(Storage::has($product->thumbnail));
     }
 
@@ -73,17 +74,6 @@ class ProductsTest extends TestCase
 
         $response->assertStatus(403);
     }
-
-    public function test_create_product_with_valid_data()
-    {
-        $data = Product::factory()->make()->toArray();
-
-        $response = $this->actingAs($this->getUser(Roles::ADMIN))
-            ->post(route('admin.products.store'), $data);
-
-        $response->assertStatus(302);
-    }
-
 
     public function test_create_product_with_invalid_data()
     {
@@ -113,6 +103,11 @@ class ProductsTest extends TestCase
         $response->assertStatus(302);
         $response->assertRedirectToRoute('admin.products.edit', compact('product'));
         $product->refresh();
+
+        $this->assertEquals($product['title'], $product->title);
+        $this->assertEquals($product['SKU'], $product->SKU);
+        $this->assertEquals($product['price'], $product->price);
+        $this->assertEquals($product['quantity'], $product->quantity);
     }
 
     public function test_update_products_with_invalid_data()
