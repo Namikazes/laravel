@@ -63,7 +63,7 @@ class ProductsController extends Controller
 
         notify()->success("Edit products '$data[title]'");
 
-        return redirect()->route('admin.products.index', $product);
+        return redirect()->route('admin.products.edit', $product);
     }
 
     /**
@@ -75,7 +75,7 @@ class ProductsController extends Controller
 
         $product->deleteOrFail();
 
-        notify()->warning("Delete category '$product[title]'");
+        notify()->warning("Delete product '$product[title]'");
 
         return redirect()->route('admin.products.index');
     }
