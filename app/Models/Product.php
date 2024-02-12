@@ -34,7 +34,7 @@ class Product extends Model
         return Attribute::make(
             get: function () {
                 if(Storage::has($this->attributes['thumbnail'])){
-                    Storage::url($this->attributes['thumbnail']);
+                  return Storage::url($this->attributes['thumbnail']);
                 }
 
                 return $this->attributes['thumbnail'];
