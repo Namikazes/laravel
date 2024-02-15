@@ -36,6 +36,8 @@ class ProductsController extends Controller
      */
     public function store(CreateProductsRequest $request, ProductsRepositoryContract $repository)
     {
+        notify()->success("Create category");
+
         return $repository->create($request)
             ? redirect()->route('admin.products.index')
             : redirect()->back()->withInput();
@@ -47,8 +49,9 @@ class ProductsController extends Controller
     public function edit(Product $product)
     {
         $categories = Category::all();
+        $productCategories = $product->categories()->get()->pluck('id')->toArray();
 
-        return view('admin/products/edit', compact('product', 'categories'));
+        return view('admin/products/edit', compact('product', 'categories', 'productCategories' ));
     }
 
     /**
@@ -73,6 +76,7 @@ class ProductsController extends Controller
     {
         $this->middleware('permission:' .config('permission.permissions.products.delete'));
 
+        $product->categories()->detach();
         $product->deleteOrFail();
 
         notify()->warning("Delete product '$product[title]'");

@@ -6,10 +6,12 @@ use App\Enums\Roles;
 use App\Models\Category;
 use App\Models\Product;
 use App\Models\User;
+use App\Services\FileStorageServices;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
+use Mockery\MockInterface;
 use Tests\TestCase;
 
 class ProductsTest extends TestCase
@@ -37,7 +39,15 @@ class ProductsTest extends TestCase
         $data = $productData->toArray();
         $data['thumbnail'] = $file;
 
-        $response = $this->actingAs($this->getUser(Roles::ADMIN))
+        $this->mock(
+            FileStorageServices::class,
+            function (MockInterface $mock) {
+                $mock->shouldReceive('upload')
+                    ->andReturn('image_uploaded.img');
+            }
+        );
+
+          $this->actingAs($this->getUser(Roles::ADMIN))
             ->post(route('admin.products.store'), $data);
 
         $this->assertDatabaseHas(Product::class, [
@@ -47,12 +57,12 @@ class ProductsTest extends TestCase
             'price' => $productData->price,
             'description' => $productData->description,
             'new_price' => $productData->new_price,
-            'quantity' => $productData->quantity
+            'quantity' => $productData->quantity,
+            'thumbnail' => 'image_uploaded.img'
         ]);
 
         $product = Product::where('title', $productData->title)->first();
 
-        $this->assertTrue(Storage::has($product->thumbnail));
     }
 
     public function test_use_products_role_admin()

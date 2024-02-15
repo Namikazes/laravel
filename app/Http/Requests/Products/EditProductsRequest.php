@@ -26,19 +26,13 @@ class EditProductsRequest extends FormRequest
         $productId = $this->route('product')->id;
 
         return [
-            'title' => [
-                'required',
-                'string',
-                'min:2',
-                'max:255',
-                Rule::unique('categories', 'name')->ignore($productId),
-            ],
+            'title' => ['required', 'string', 'min:2', 'max:255', Rule::unique('categories', 'name')->ignore($productId),],
             'description' => ['nullable', 'string'],
             'SKU' => ['required', 'string', 'min:1', 'max:35', Rule::unique('products', 'SKU')->ignore($productId)],
             'price' => ['required', 'numeric', 'min:1'],
             'new_price' => ['nullable', 'numeric', 'min:1'],
             'quantity' => ['required', 'numeric', 'min:0'],
-            'thumbnail' => ['nullable', 'image:jpeg,png'],
+            'thumbnail' => ['sometimes', 'image:jpeg,png'],
             'categories.*' => ['required', 'numeric', Rule::exists('categories', 'id')],
             'images.*' => ['sometimes', 'image:jpeg,png'],
         ];
