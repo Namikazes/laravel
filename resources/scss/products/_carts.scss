@@ -1,0 +1,20 @@
+.product-preview {
+    &-img {
+        height: 200px;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        background-color: #ffffff;
+    }
+
+    &-price {
+        text-align: right;
+    }
+
+    &-button{
+        &-container {
+            margin: 0 auto;
+            width: 80%;
+        }
+    }
+}
