@@ -6,8 +6,8 @@
             <p class="product-preview-price">{{ $product->price }} $</p>
             <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group  product-preview-button-container">
-                    <button type="button" class="btn btn-sm btn-outline-dark">Show</button>
-                    <button type="button" class="btn btn-sm btn-outline-success">Buy</button>
+                    <a href="{{ route('products.show', $product) }}" class="btn btn-sm btn-outline-dark">Show</a>
+                    <a class="btn btn-sm btn-outline-success">Buy</a>
                 </div>
             </div>
         </div>
