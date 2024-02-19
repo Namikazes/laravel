@@ -1,0 +1,170 @@
+[33mcommit 63ecf665477a552c586ca881601a0a307830ab03[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mProd-Categ-controller[m[33m, [m[1;31morigin/Prod-Categ-controller[m[33m)[m
+Author: Namikazes <egorsitenko35@gmail.com>
+Date:   Sun Feb 18 21:05:08 2024 +0200
+
+    [hw-29] Prod-Categ-controller
+
+[33mcommit 448bf5fc67fcacd39475d44db34e95aba034a4ab[m[33m ([m[1;32mmain[m[33m)[m
+Author: Namikazes <egorsitenko35@gmail.com>
+Date:   Sat Feb 17 17:07:19 2024 +0200
+
+    add
+
+[33mcommit bbbe29c8a1fabc1968a5e55526f6401ff7bbafc9[m
+Merge: a912180 6c2d625
+Author: Namikazes <108269871+Namikazes@users.noreply.github.com>
+Date:   Thu Feb 15 16:09:17 2024 +0200
+
+    Merge pull request #9 from Namikazes/update-destroy-image
+    
+    [hw-27]update-destroy-image
+
+[33mcommit 6c2d625c72c0a0c0ccc9e63d39a9fb9fbdc97199[m[33m ([m[1;31morigin/update-destroy-image[m[33m, [m[1;32mupdate-destroy-image[m[33m)[m
+Author: Namikazes <egorsitenko35@gmail.com>
+Date:   Mon Feb 12 20:50:27 2024 +0200
+
+    [wh-27]update-destroy-image
+
+[33mcommit a91218074a3f7330c17bcd86e4c5a8da5b32979c[m
+Merge: fe00d5d 3daec3e
+Author: Namikazes <108269871+Namikazes@users.noreply.github.com>
+Date:   Thu Feb 8 18:10:43 2024 +0200
+
+    Merge pull request #8 from Namikazes/Tests
+    
+    [hw-26 ]Tests
+
+[33mcommit 3daec3e8183b8ee79c0956d3b69c812e9ef3e24c[m[33m ([m[1;31morigin/Tests[m[33m, [m[1;32mTests[m[33m)[m
+Author: Namikazes <egorsitenko35@gmail.com>
+Date:   Thu Feb 8 18:09:47 2024 +0200
+
+    update Tests
+
+[33mcommit fe00d5d079447d2dcd6c34a1e2d0106a0676d06a[m
+Merge: b4ff930 ebe94ac
+Author: Namikazes <108269871+Namikazes@users.noreply.github.com>
+Date:   Tue Feb 6 15:13:39 2024 +0200
+
+    Merge pull request #7 from Namikazes/Admin-Products
+    
+    [hw-25 ]Admin-Products
+
+[33mcommit fe21ca2bda8982630bc3a065927f575699171e40[m
+Author: Namikazes <egorsitenko35@gmail.com>
+Date:   Tue Feb 6 15:12:13 2024 +0200
+
+    [hw-26] Tests
+
+[33mcommit ebe94ace387669061fe79d3a9ac16033c6a8f0a5[m[33m ([m[1;31morigin/Admin-Products[m[33m, [m[1;32mAdmin-Products[m[33m)[m
+Author: Namikazes <egorsitenko35@gmail.com>
+Date:   Wed Jan 31 18:18:26 2024 +0200
+
+    FileStorageServices
+
+[33mcommit 5fbdeb6a20f2b330421ff76de2e5798eb804c833[m
+Author: Namikazes <egorsitenko35@gmail.com>
+Date:   Wed Jan 31 17:43:24 2024 +0200
+
+    Admin-Products
+
+[33mcommit b4ff93060d33724edb26efd3c49985d9aaa9114c[m
+Merge: 402ad99 e9ed455
+Author: Namikazes <108269871+Namikazes@users.noreply.github.com>
+Date:   Sat Jan 27 12:21:19 2024 +0200
+
+    Merge pull request #6 from Namikazes/Admin-categories
+    
+    [hw-24] Admin-categories
+
+[33mcommit e9ed455ce4d0b05bedc22a72666e57206a82bcb2[m[33m ([m[1;31morigin/Admin-categories[m[33m, [m[1;32mAdmin-categories[m[33m)[m
+Author: Namikazes <egorsitenko35@gmail.com>
+Date:   Thu Jan 25 19:35:12 2024 +0200
+
+    [hw-24] Admin-categories
+
+[33mcommit 402ad99df27eb6c65416e5271683ec9cc3839698[m
+Merge: e2a3732 118e065
+Author: Namikazes <108269871+Namikazes@users.noreply.github.com>
+Date:   Thu Jan 25 12:20:20 2024 +0200
+
+    Merge pull request #5 from Namikazes/Admin-dashboard
+    
+    Admin dashboard
+
+[33mcommit e2a373221219652f3ac895ddaa4be0b94dd5e81b[m
+Merge: 96a62d9 0efe714
+Author: Namikazes <108269871+Namikazes@users.noreply.github.com>
+Date:   Thu Jan 25 12:20:12 2024 +0200
+
+    Merge pull request #4 from Namikazes/Products-Categories
+    
+    [hw-22] Products-Categories
+
+[33mcommit 118e065c9cb49449ccdc382319b7fa8a9827b43e[m[33m ([m[1;31morigin/Admin-dashboard[m[33m, [m[1;32mAdmin-dashboard[m[33m)[m
+Author: Namikazes <egorsitenko35@gmail.com>
+Date:   Mon Jan 22 20:57:03 2024 +0200
+
+    [hw-23] Admin-dashboard
+
+[33mcommit 0efe7149a44f9ad19018740c90eb1fe94f1d0073[m[33m ([m[1;31morigin/Products-Categories[m[33m, [m[1;32mProducts-Categories[m[33m)[m
+Author: Namikazes <egorsitenko35@gmail.com>
+Date:   Sun Jan 21 19:30:49 2024 +0200
+
+    [hw-22] Products-Categories
+
+[33mcommit 96a62d9fa9be5e3f6e548dc0edf5546c3d0e8ec1[m
+Merge: a887057 6f09c33
+Author: Namikazes <108269871+Namikazes@users.noreply.github.com>
+Date:   Sun Jan 21 15:39:34 2024 +0200
+
+    Merge pull request #3 from Namikazes/Registertration
+    
+    [hw-21] Registertration
+
+[33mcommit a887057924ebd5906157a855b22aa6af58c9b31d[m
+Merge: e97e082 89f0018
+Author: Namikazes <108269871+Namikazes@users.noreply.github.com>
+Date:   Thu Jan 18 13:35:34 2024 +0200
+
+    Merge pull request #2 from Namikazes/Users
+    
+    [hw-20] Users
+
+[33mcommit e97e082693f61d7d1dde8186bce19458c9af6761[m
+Merge: da42e78 39d4f89
+Author: Namikazes <108269871+Namikazes@users.noreply.github.com>
+Date:   Thu Jan 18 13:35:24 2024 +0200
+
+    Merge pull request #1 from Namikazes/Roles-And-Permissions
+    
+    [hw-19] Roles-And-Permissions
+
+[33mcommit 6f09c334269ba47cb09873f7ccd20beebc62d87b[m[33m ([m[1;31morigin/Registertration[m[33m, [m[1;32mRegistertration[m[33m)[m
+Author: Namikazes <egorsitenko35@gmail.com>
+Date:   Thu Jan 18 13:34:28 2024 +0200
+
+    Registertration
+
+[33mcommit 89f0018d1e5b9b948ff48bfba1af12181bf3b967[m[33m ([m[1;31morigin/Users[m[33m, [m[1;32mUsers[m[33m)[m
+Author: Namikazes <egorsitenko35@gmail.com>
+Date:   Wed Jan 17 13:43:38 2024 +0200
+
+    [hw-20 Users]
+
+[33mcommit 39d4f8933e96b4a459057567d96c82bbc84ae37a[m[33m ([m[1;31morigin/Roles-And-Permissions[m[33m, [m[1;32mRoles-And-Permissions[m[33m)[m
+Author: Namikazes <egorsitenko35@gmail.com>
+Date:   Wed Jan 17 12:02:17 2024 +0200
+
+    [hw-19] Roles-And-Permissions
+
+[33mcommit da42e78f34c0097b97be34f9f684d0ebb05f4da8[m
+Author: Namikazes <egorsitenko35@gmail.com>
+Date:   Sat Jan 13 21:13:14 2024 +0200
+
+    Front login/register
+
+[33mcommit 85afdea15fb84e927b4816b2005ce27125db701b[m
+Author: Namikazes <egorsitenko35@gmail.com>
+Date:   Sat Jan 13 18:09:45 2024 +0200
+
+    first commit
