@@ -30,9 +30,9 @@ class Product extends Model
         return $this->morphMany(Image::class, 'imageble');
     }
 
-    public function scopeAvalible(Builder $query): Builder
+    public function  scopeAvalible(Builder $quantity): Builder
     {
-        return $query->where('quantity', '>', 0);
+        return $quantity->where('quantity', '>', 0);
     }
 
     public function thumbnailUri(): Attribute

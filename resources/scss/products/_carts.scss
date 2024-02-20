@@ -1,12 +1,11 @@
 .product-preview {
-    &-img {
+    &-image {
         height: 200px;
         background-repeat: no-repeat;
         background-size: contain;
         background-position: center;
         background-color: #ffffff;
     }
-
     &-price {
         text-align: right;
     }
