@@ -13,6 +13,10 @@
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
 
+    <!-- Lara Izitoast -->
+    <link href="{{ asset('css/iziToast.css') }}" rel="stylesheet">
+
+
     <!-- Scripts -->
     @vite(['resources/scss/app.scss', 'resources/js/app.js'])
 </head>
@@ -24,5 +28,9 @@
             @yield('content')
         </main>
     </div>
+    <script src="{{ asset('js/iziToast.js') }}"></script>
+    @include('vendor.lara-izitoast.toast')
+    @stack('footer-js')
+    <script src="https://kit.fontawesome.com/6c1ef724a9.js" crossorigin="anonymous"></script>
 </body>
 </html>

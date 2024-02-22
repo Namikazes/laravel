@@ -21,7 +21,11 @@
                         <p class="mb-2">Quantity: {{ $product->quantity }}</p>
                         <div class="price-container d-flex justify-content-end align-items-center w-100">
                             <p class="me-2 mb-0">{{ $product->price }} $</p>
-                            <button class="btn btn-outline-success w-25">Buy</button>
+                        @if($isInCart)
+                                @include('cart.parts.remove_button', ['product' => $product, 'rowId' => $rowId])
+                            @else
+                                @include('cart.parts.add_button', ['product' => $product])
+                            @endif
                         </div>
                     </div>
                 </div>

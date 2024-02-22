@@ -4,8 +4,83 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7c2f6e4f4ac1e22f109c60cf6f28fb59",
+    "content-hash": "450cf7937ffaa45085e3bcde9fb2f5db",
     "packages": [
+        {
+            "name": "anayarojo/shoppingcart",
+            "version": "4.2.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/anayarojo/laravel-shopping-cart.git",
+                "reference": "a93e04a36d6f9c1e4af8bbddfede021ff412c685"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/anayarojo/laravel-shopping-cart/zipball/a93e04a36d6f9c1e4af8bbddfede021ff412c685",
+                "reference": "a93e04a36d6f9c1e4af8bbddfede021ff412c685",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/events": "5.4.*||5.5.*||5.6.*||5.7.*||5.8.*||^6.0||^7.0||^8.0||^9.0||^10",
+                "illuminate/session": "5.4.*||5.5.*||5.6.*||5.7.*||5.8.*||^6.0||^7.0||^8.0||^9.0||^10",
+                "illuminate/support": "5.4.*||5.5.*||5.6.*||5.7.*||5.8.*||^6.0||^7.0||^8.0||^9.0||^10",
+                "nesbot/carbon": "~1.20||^1.26.3||^2.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.0",
+                "orchestra/testbench": "^3.4|^4.0|^5.0|^6.0",
+                "phpunit/phpunit": "~5.0||~6.0||~7.0||~8.0||~9.0||~10.0"
+            },
+            "suggest": {
+                "gloudemans/notify": "Simple flash notifications for Laravel"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Gloudemans\\Shoppingcart\\ShoppingcartServiceProvider"
+                    ],
+                    "aliases": {
+                        "Cart": "Gloudemans\\Shoppingcart\\Facades\\Cart"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Gloudemans\\Shoppingcart\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Rob Gloudemans",
+                    "email": "info@robgloudemans.nl",
+                    "homepage": "http://robgloudemans.nl/"
+                },
+                {
+                    "name": "Patrick Henninger",
+                    "email": "privat@skyraptor.eu",
+                    "homepage": "https://skyraptor.eu/"
+                },
+                {
+                    "name": "Raul Anaya Rojo",
+                    "email": "isw.anayarojo@gmail.com",
+                    "homepage": "https://anayarojo.net/"
+                }
+            ],
+            "description": "Laravel Shoppingcart",
+            "keywords": [
+                "laravel",
+                "shoppingcart"
+            ],
+            "support": {
+                "source": "https://github.com/anayarojo/laravel-shopping-cart/tree/4.2.2"
+            },
+            "time": "2023-04-19T16:03:37+00:00"
+        },
         {
             "name": "appslabke/lara-izitoast",
             "version": "v1.1.1",
@@ -3425,6 +3500,92 @@
                 }
             ],
             "time": "2023-11-08T05:53:05+00:00"
+        },
+        {
+            "name": "smorken/ext-http",
+            "version": "v5.0.6",
+            "source": {
+                "type": "git",
+                "url": "https://bitbucket.org/scott_morken/laravel-ext-http.git",
+                "reference": "1b6e8315e479e284740141ed1a4ded47bbf55d0a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://bitbucket.org/scott_morken/laravel-ext-http/get/1b6e8315e479e284740141ed1a4ded47bbf55d0a.zip",
+                "reference": "1b6e8315e479e284740141ed1a4ded47bbf55d0a",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.0",
+                "smorken/sanitizer": "~5.0"
+            },
+            "require-dev": {
+                "laravel/framework": "5.1.*",
+                "mockery/mockery": "dev-master",
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Smorken\\Ext\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Scott Morken",
+                    "email": "scott.morken@phoenixcollege.edu"
+                }
+            ],
+            "description": "HTTP extension for Laravel 5.1",
+            "homepage": "https://bitbucket.org/scott_morken/laravel-ext-http",
+            "support": {
+                "source": "https://bitbucket.org/scott_morken/laravel-ext-http/src/1b6e8315e479e284740141ed1a4ded47bbf55d0a/?at=v5.0.6"
+            },
+            "abandoned": true,
+            "time": "2017-06-12T17:57:39+00:00"
+        },
+        {
+            "name": "smorken/sanitizer",
+            "version": "v5.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://bitbucket.org/scott_morken/laravel-sanitizer.git",
+                "reference": "e68b92d26c2fb29b356867191c8128945a4afb27"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://bitbucket.org/scott_morken/laravel-sanitizer/get/e68b92d26c2fb29b356867191c8128945a4afb27.zip",
+                "reference": "e68b92d26c2fb29b356867191c8128945a4afb27",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "dev-master",
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/helpers.php"
+                ],
+                "psr-4": {
+                    "Smorken\\Sanitizer\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Scott Morken",
+                    "email": "scott.morken@phoenixcollege.edu"
+                }
+            ],
+            "time": "2016-04-01T16:07:06+00:00"
         },
         {
             "name": "spatie/laravel-permission",
