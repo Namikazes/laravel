@@ -39,12 +39,12 @@ class Product extends Model
     {
         return Attribute::make(
             get: function () {
-                if(Storage::has($this->attributes['thumbnail'])){
-                  return Storage::url($this->attributes['thumbnail']);
+                if (Storage::has($this->attributes['thumbnail'])) {
+                    return Storage::url($this->attributes['thumbnail']);
                 }
 
                 return $this->attributes['thumbnail'];
-});
+            });
     }
 
     public function setThumbnailAttribute($image)
@@ -59,5 +59,32 @@ class Product extends Model
             $image,
             $this->attributes['slug']
         );
+    }
+
+    public function calculatePrice(): Attribute
+    {
+        return Attribute::make(
+            get: function () {
+               return round($this->attributes['new_price'] && $this->attributes['new_price'] > 0
+                   ? $this->attributes['new_price']
+                   : $this->attributes['price'], 2);
+            });
+    }
+
+    public function discountPrice(): Attribute
+    {
+        return Attribute::make(
+            get: function () {
+                if(!$this->attributes['new_price'] || $this->attributes['new_price'] === 0) {
+                    return null;
+                }
+
+                $price = $this->attributes['price'];
+                $newPrice = $this->attributes['new_price'];
+                $percent = $price / 100;
+
+                return round( ($price - $newPrice) / $percent, 2);
+
+            });
     }
 }

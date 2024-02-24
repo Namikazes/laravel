@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Image;
 use App\Models\Product;
+use Gloudemans\Shoppingcart\CartItem;
+use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
 
 class ProductsController extends Controller
@@ -19,7 +21,17 @@ class ProductsController extends Controller
     {
 
         $gallery = $product->images->map(fn($image) => $image->url);
+        $rowId = $this->getProductFromCart($product)?->rowId;
+        $isInCart = !!$rowId;
 
-        return view('products.show', compact('product', 'gallery'));
+        return view('products.show', compact('product', 'gallery', 'isInCart', 'rowId'));
+    }
+
+    protected function getProductFromCart(Product $product): CartItem | null
+    {
+        return Cart::instance('cart')
+            ->content()
+            ->where('id', '=', $product->id)
+            ?->first();
     }
 }

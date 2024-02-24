@@ -32,3 +32,10 @@ Route::name('admin.')->prefix('admin')->middleware(['role:admin|moderator'])->gr
     Route::resource('categories', \App\Http\Controllers\Admin\CategoriesController::class)->except(['show']);
     Route::resource('products', \App\Http\Controllers\Admin\ProductsController::class)->except(['show']);
 });
+
+Route::name('cart.')->prefix('cart')->group(function () {
+   Route::get('/', [\App\Http\Controllers\CartController::class, 'index'])->name('index');
+   Route::post('{product}', [\App\Http\Controllers\CartController::class, 'add'])->name('add');
+   Route::delete('/', [\App\Http\Controllers\CartController::class, 'remove'])->name('remove');
+   Route::post('{product}/count', [\App\Http\Controllers\CartController::class, 'countUpdate'])->name('count.update');
+});
