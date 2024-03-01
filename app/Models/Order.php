@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Order extends Model
 {
@@ -25,6 +26,7 @@ class Order extends Model
         'total',
         'created_at',
         'updated_at',
+        'vendor_order_id'
     ];
 
     public function status():BelongsTo
@@ -40,6 +42,11 @@ class Order extends Model
     public function products():BelongsToMany
     {
         return $this->belongsToMany(Product::class)->withPivot(['name', 'quantity', 'single_price']);
+    }
+
+    public function transaction(): HasOne
+    {
+        return $this->hasOne(Transaction::class);
     }
 
 }
