@@ -77,6 +77,13 @@
                     </tr>
                     </tbody>
                 </table>
+                <hr>
+                @auth()
+                    <a href="{{ route('checkout') }}" class="btn btn-outline-success w-100">Checkout </a>
+                @else
+                    <a href="{{ route('login') }}" class="btn btn-outline-success mb-2 w-100">Sing in</a>
+                    <a href="{{ route('register') }}" class="btn btn-outline-primary w-100">Sing out</a>
+                @endauth
             </div>
         </div>
     </div>
