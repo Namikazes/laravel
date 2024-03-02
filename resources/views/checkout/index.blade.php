@@ -171,6 +171,7 @@
                             </tr>
                             </tbody>
                         </table>
+                        @include('payment.paypal')
                     </div>
                 </div>
             </div>

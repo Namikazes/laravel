@@ -11,9 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('order_statuses', function (Blueprint $table) {
-            $table->id();
-            $table->string('name', 15)->unique();
+        Schema::table('orders', function (Blueprint $table) {
+            $table->string('vendor_order_id')->unique()->after('user_id');
         });
     }
 
@@ -22,6 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('order_statuses');
+        Schema::table('orders', function (Blueprint $table) {
+            $table->dropColumn('vendor_order_id');
+        });
     }
 };
