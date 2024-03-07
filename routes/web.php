@@ -13,6 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('event', function () {
+    $order = \App\Models\Order::all()->last();
+   \App\Events\OrderCreateEvent::dispatch($order);
+});
+
 Route::get('/', \App\Http\Controllers\HomeController::class)->name('home');
 
 Route::resource('products', \App\Http\Controllers\ProductsController::class)->only('index', 'show');
@@ -48,4 +53,5 @@ Route::name('cart.')->prefix('cart')->group(function () {
 Route::middleware(['auth'])->group(function () {
    Route::get('checkout', \App\Http\Controllers\CheckoutController::class)->name('checkout');
    Route::get('orders/{order}/paypal/thank-you', \App\Http\Controllers\Orders\PaypalController::class);
+   Route::get('invoices/{order}', \App\Http\Controllers\InvoiceController::class)->name('invoice');
 });

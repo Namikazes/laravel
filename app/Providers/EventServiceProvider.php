@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Events\OrderCreateEvent;
+use App\Listeners\OrderCreateNotificationListener;
 use App\Listeners\UserLoginListener;
 use App\Listeners\UserLogoutListener;
 use App\Models\Image;
@@ -28,6 +30,9 @@ class EventServiceProvider extends ServiceProvider
         ],
         \Illuminate\Auth\Events\Login::class => [
             UserLoginListener::class
+        ],
+        OrderCreateEvent::class => [
+            OrderCreateNotificationListener::class
         ]
     ];
 
